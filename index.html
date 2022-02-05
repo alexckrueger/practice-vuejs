@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Practice Vue.js</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="index.js" defer></script>
+  </head>
+  <style>
+    .disabled {
+      color: lightgray;
+      transition: 1s;
+    }
+  </style>
+  <body>
+    <h1>Hello from HTML!</h1>
+    <div id="app">
+      <h2>{{ message }}</h2>
+      <p>{{ model }}</p> <br>
+      <button v-on:click="changeMessage">{{ ouch }}</button><br> <br>
+      <input v-model="model" placeholder="edit me" /> 
+      <br>
+      <ol>
+        <li v-for="color in colors">{{color}}</li>
+      </ol>
+      <input type="text" v-model="newColor">
+      <button v-on:click="addColor">Add Color</button>
+      <br>
+      <ul>
+        <li v-for="color in colors">{{color}}</li>
+      </ul>
+      <br>
+      <input type="checkbox" v-model="notInvis">
+      <button v-on:click="notInvis = !notInvis">Invisibility Potion!</button>
+      <p v-bind:class="{ disabled: notInvis }">Wee woo</p>
+      <p v-if="notInvis">I'm invisible</p>
+    </div>
+  </body>
+</html>
