@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Practice Vue.js</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="products.js" defer></script>
+  </head>
+  <body>
+    <h1>Hello from HTML!</h1>
+    <div id="app">
+      <p><input type="text" v-model="name"> Name</p>
+      <p><input type="text" v-model="description"> Description</p>
+      <p><input type="text" v-model="price"> Price</p>
+      <p><input type="text" v-model="image_url"> Image_URL (optional)</p>
+      <button v-on:click="createProduct()">NEW PRODUCT</button>
+      <div v-for="product in products">
+        <h3>{{product.name}}</h2>
+        <div>{{product.description}}</div>
+        <h4>{{product.price}}</h4>
+        <h6>{{product}}</h6>
+        <br>
+      </div>
+      <br>
+      <button v-on:click="patchProduct()">PATCH REQUEST</button>
+      <p><input type="text" v-model="productId"> Product ID</p>
+      <p><input type="text" v-model="name"> Name</p>
+      <p><input type="text" v-model="description"> Description</p>
+      <p><input type="text" v-model="price"> Price</p>
+      <p><input type="text" v-model="image_url"> Image_URL (optional)</p>
+      <br>
+      <div><input type="number" v-model="productIdToObliterate"><button v-on:click="deleteProduct()">DELETE PRODUCT</button></div>
+      <p v-if="invisible">Product successfully obliterated.</p>
+    </div>
+  </body>
+</html>
