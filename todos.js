@@ -28,6 +28,12 @@ var App = {
       todos: [],
     };
   },
+  created: function () {
+    axios.get("https://jsonplaceholder.typicode.com/todos").then((response) => {
+      console.log(response.data);
+      this.todos = response.data;
+    });
+  },
   methods: {
     loadTodos: function () {
       axios.get("https://jsonplaceholder.typicode.com/todos").then((response) => {
@@ -39,7 +45,7 @@ var App = {
       this.todos = [];
     },
     addTodos: function () {
-      this.todos.push({ title: "HA" });
+      this.todos.push({ title: "HA", completed: false });
     },
   },
 };

@@ -18,7 +18,10 @@
       <button v-on:click="loadTodos()">LOAD TODOS</button>
       <button v-on:click="unloadTodos()">UNLOAD TODOS</button>
       <button v-on:click="addTodos()">ADD TODOS</button>
-      <p v-for="todo in todos">{{todo["title"]}}</p>
+      <div v-for="todo in todos">
+      <h4>Title: {{todo["title"]}}</h5>
+      <h5>Completed: {{todo.completed}}</h5>
+      </div>
     </div>
   </body>
 </html>
