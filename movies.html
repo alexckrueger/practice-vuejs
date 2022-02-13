@@ -1,0 +1,24 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice Vue.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="movies.js" defer></script>
+</head>
+<body>
+  <h1>Hello from HTML!</h1>
+  <div id="app">
+    <h1>{{ message }}</h1>
+    <p v-for="movie in movies">{{movie.title}}: {{movie.plot}}</p>
+    <br>
+    <input type="text" v-model="newMovie">
+    <button v-on:click="addMovie">ADD MOVIE</button>
+    <img src="https://i.ibb.co/59C7PD9/zoolander.jpg" v-if="zoolanderExists">
+    <br>
+    <button v-on:click="loadMovies">LOAD MOVIES</button>
+  </div>
+</body>
+</html>
